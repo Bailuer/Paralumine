@@ -4,11 +4,11 @@ import 'providers/analysis_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const PhotoAidApp());
+  runApp(const ParalumineApp());
 }
 
-class PhotoAidApp extends StatelessWidget {
-  const PhotoAidApp({super.key});
+class ParalumineApp extends StatelessWidget {
+  const ParalumineApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class PhotoAidApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AnalysisProvider()),
       ],
       child: MaterialApp(
-        title: 'PhotoAid',
+        title: 'Paralumine',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'SF Pro Display',

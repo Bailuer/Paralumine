@@ -8,15 +8,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:photoaid/main.dart';
+import 'package:paralumine/main.dart';
 
 void main() {
-  testWidgets('PhotoAid app launch test', (WidgetTester tester) async {
+  testWidgets('Paralumine app launch test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const PhotoAidApp());
+    await tester.pumpWidget(const ParalumineApp());
 
-    // Verify that PhotoAid title is present.
-    expect(find.text('PhotoAid'), findsOneWidget);
+    // Verify that Paralumine title is present.
+    expect(find.text('Paralumine'), findsOneWidget);
     expect(find.text('Turn inspiration into action'), findsOneWidget);
   });
 }

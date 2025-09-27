@@ -1,4 +1,4 @@
-package com.example.photoaid
+package com.example.paralumine
 
 import io.flutter.embedding.android.FlutterActivity
 

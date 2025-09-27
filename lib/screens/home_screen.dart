@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             Icon(Icons.camera_alt, color: Colors.blue, size: 28),
             const SizedBox(width: 8),
             const Text(
-              'PhotoAid',
+              'Paralumine',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

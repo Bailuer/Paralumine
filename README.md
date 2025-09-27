@@ -1,6 +1,6 @@
-# photoaid
+# Paralumine
 
-A new Flutter project.
+Paralumine - AI-powered photography assistant that helps recreate photos you love.
 
 ## Getting Started
 
