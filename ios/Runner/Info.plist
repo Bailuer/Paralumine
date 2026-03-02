@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Paralumine needs camera access to take photos for analysis and comparison.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Paralumine needs photo library access to select images for analysis and comparison.</string>
 </dict>
 </plist>

@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import '../models/photo_analysis.dart';
-import '../services/ai_analysis_service.dart';
+import '../services/gemini_analysis_service.dart';
 
 class AnalysisProvider with ChangeNotifier {
-  final AIAnalysisService _analysisService = AIAnalysisService();
+  final GeminiAnalysisService _analysisService = GeminiAnalysisService();
   
   final List<PhotoAnalysis> _analyses = [];
   PhotoAnalysis? _currentAnalysis;
@@ -30,6 +30,24 @@ class AnalysisProvider with ChangeNotifier {
 
     try {
       final analysis = await _analysisService.analyzePhoto(imageFile);
+      _currentAnalysis = analysis;
+      _analyses.insert(0, analysis);
+      _isAnalyzing = false;
+      notifyListeners();
+    } catch (e) {
+      _error = e.toString();
+      _isAnalyzing = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> comparePhotos(File currentEnvironment, File targetEffect) async {
+    _isAnalyzing = true;
+    _error = null;
+    notifyListeners();
+
+    try {
+      final analysis = await _analysisService.comparePhotos(currentEnvironment, targetEffect);
       _currentAnalysis = analysis;
       _analyses.insert(0, analysis);
       _isAnalyzing = false;

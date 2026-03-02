@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import '../providers/analysis_provider.dart';
 import 'analysis_screen.dart';
+import 'photo_comparison_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -140,6 +141,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
+        
+        // Single photo analysis
         Row(
           children: [
             Expanded(
@@ -163,6 +166,18 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+        
+        const SizedBox(height: 16),
+        
+        // Photo comparison feature
+        _buildActionCard(
+          context,
+          icon: Icons.compare,
+          title: 'Compare Photos',
+          subtitle: 'Current environment vs Target effect',
+          color: Colors.purple,
+          onTap: () => _navigateToPhotoComparison(context),
+        ),
       ],
     );
   }
@@ -173,6 +188,7 @@ class HomeScreen extends StatelessWidget {
     required String title,
     required String subtitle,
     required VoidCallback onTap,
+    Color? color,
   }) {
     return GestureDetector(
       onTap: onTap,
@@ -194,7 +210,7 @@ class HomeScreen extends StatelessWidget {
             Icon(
               icon,
               size: 40,
-              color: Colors.blue,
+              color: color ?? Colors.blue,
             ),
             const SizedBox(height: 12),
             Text(
@@ -408,5 +424,14 @@ class HomeScreen extends StatelessWidget {
         );
       }
     }
+  }
+
+  void _navigateToPhotoComparison(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const PhotoComparisonScreen(),
+      ),
+    );
   }
 }

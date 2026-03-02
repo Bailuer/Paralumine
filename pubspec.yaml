@@ -41,7 +41,7 @@ dependencies:
   image: ^4.1.7
   
   # AI and ML
-  tflite_flutter: ^0.10.4
+  google_generative_ai: ^0.4.6
   
   # State management
   provider: ^6.1.1
